@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.PrintStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 /**
  * Revisão com objeto Aircraft.
@@ -10,12 +11,16 @@ import java.io.FileInputStream;
  */
 public class Aircraft
 {
-    private boolean[][] seats;
+    private Seat[][] seats;
 
     public Aircraft() {
-        this.seats = new boolean[9][4];
+        this.seats = new Seat[9][4];
 
-        this.seats[2][2] = true; 
+        for (int i = 0; i < seats.length; i++) {
+            for (int j = 0; j < seats[i].length; j++) {
+                this.seats[i][j] = new Seat();
+            }
+        }
     }
     
     public void sell(String command) {
@@ -54,10 +59,10 @@ public class Aircraft
         }
         
         line = number - 1;
-        if (this.seats [line][column])
+        if (this.seats [line][column].getAvailable())
             System.out.println("Assento OCUPADO!");
         else {
-            this.seats[line][column] = true;        
+            this.seats[line][column].setAvailable(false);        
             int next;
             if (column == 0 || column == 2) {
                 next = column + 1;
@@ -79,7 +84,7 @@ public class Aircraft
             // mostra uma linha matriz
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
-                if (this.seats[i][j])
+                if (this.seats[i][j].getAvailable())
                     System.out.print("[O]");
                 else
                     System.out.print("[ ]");
@@ -96,7 +101,7 @@ public class Aircraft
         
     }
     public void write() throws Exception {
-        PrintStream file = new PrintStream("seats.txt");
+        PrintStream file = new PrintStream(new FileOutputStream("seats.txt"));
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {            
                     file.print(this.seats[i][j]+" ");
@@ -110,8 +115,10 @@ public class Aircraft
         FileInputStream file = new FileInputStream("seats.txt");
         Scanner in = new Scanner(file);
         for (int i = 0; i < this.seats.length; i++) {
-            for (int j = 0; j < this.seats[i].length; j++) {            
-                    this.seats[i][j] = in.nextBoolean();
+            for (int j = 0; j < this.seats[i].length; j++) {   
+                    
+                    this.seats[i][j] = new Seat();
+                    this.seats[i][j].setAvailable(in.nextBoolean());
             }
         }
         in.close();
