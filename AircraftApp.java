@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * @author marco.mangan@pucrs.br
+ */
 public class AircraftApp
 {
     private AircraftApp() {
@@ -26,4 +29,5 @@ public class AircraftApp
                 System.out.println("Comando invalido!");
         } while (!command.startsWith("quit"));
     
-    }}
+    }
+}

@@ -59,7 +59,7 @@ public class Aircraft
         }
         
         line = number - 1;
-        if (this.seats [line][column].getAvailable())
+        if (this.seats [line][column].getAvailable() == false)
             System.out.println("Assento OCUPADO!");
         else {
             this.seats[line][column].setAvailable(false);        
@@ -84,7 +84,7 @@ public class Aircraft
             // mostra uma linha matriz
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
-                if (this.seats[i][j].getAvailable())
+                if (this.seats[i][j].getAvailable() == false)
                     System.out.print("[O]");
                 else
                     System.out.print("[ ]");
@@ -104,7 +104,7 @@ public class Aircraft
         PrintStream file = new PrintStream(new FileOutputStream("seats.txt"));
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {            
-                    file.print(this.seats[i][j]+" ");
+                    file.print(this.seats[i][j].getAvailable()+" ");
             }
             file.println();
         }
