@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 /**
+ * A classe 
  * @author marco.mangan@pucrs.br
  */
 public class AircraftApp

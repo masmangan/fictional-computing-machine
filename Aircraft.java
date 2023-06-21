@@ -86,8 +86,10 @@ public class Aircraft
             // mostra uma linha matriz
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
-                if (this.seats[i][j].getAvailable() == false)
-                    System.out.print("[O]");
+                if (this.seats[i][j].getAvailable())
+                    System.out.print("[]");
+                else if (this.seats[i][j].getBlocked())
+                    System.out.print("[X]");
                 else
                     System.out.print("[ ]");
                 if (j == 1) {

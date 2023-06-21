@@ -8,10 +8,12 @@ public class Seat
 {
     private Customer passenger;
     private boolean available;
+    private boolean blocked;
     
     public Seat() {
         passenger = null;
         available = true;
+        blocked = false;
     }
     
     public boolean getAvailable() {
@@ -23,4 +25,7 @@ public class Seat
         this.available = available;
     }
     
+    public boolean getBlocked() {
+        return available;
+    }    
 }
