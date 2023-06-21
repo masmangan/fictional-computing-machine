@@ -87,11 +87,11 @@ public class Aircraft
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
                 if (this.seats[i][j].getAvailable())
-                    System.out.print("[]");
+                    System.out.print("[ ]");
                 else if (this.seats[i][j].getBlocked())
                     System.out.print("[X]");
                 else
-                    System.out.print("[ ]");
+                    System.out.print("[O]");
                 if (j == 1) {
                     System.out.print("   ");
                 }
