@@ -6,17 +6,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * A classe de teste AircraftAppTest.
+ * A classe de teste CustomerTest.
  *
  * @author  (seu nome)
  * @version (um número da versão ou uma data)
  */
-public class AircraftAppTest
+public class CustomerTest
 {
     /**
-     * Construtor default para a classe de teste AircraftAppTest
+     * Construtor default para a classe de teste CustomerTest
      */
-    public AircraftAppTest()
+    public CustomerTest()
     {
     }
 

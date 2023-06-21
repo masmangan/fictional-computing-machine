@@ -39,4 +39,13 @@ public class AircraftTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void testSellB2()
+    {
+        Aircraft a = new Aircraft();
+        assertEquals(true, a.sell("sell b2"));
+        assertEquals(false, a.sell("sell b2"));
+    }
 }
+

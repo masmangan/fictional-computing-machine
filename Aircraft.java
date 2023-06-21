@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**
- * Revisão com objeto Aircraft.
+ * A classe Aircraft armazena o mapa de assentos de um voo.
  * 
  * @author marco.mangan@pucrs.br
  * @see https://www.flyporter.com/en/about-porter/our-fleet/embraer-e195-e2
@@ -23,7 +23,7 @@ public class Aircraft
         }
     }
     
-    public void sell(String command) {
+    public boolean sell(String command) {
         System.out.println(command);
         String choice = command.substring(5);
         System.out.println(choice);
@@ -59,9 +59,10 @@ public class Aircraft
         }
         
         line = number - 1;
-        if (this.seats [line][column].getAvailable() == false)
+        if (this.seats [line][column].getAvailable() == false) {
             System.out.println("Assento OCUPADO!");
-        else {
+            return false;
+        } else {
             this.seats[line][column].setAvailable(false);        
             int next;
             if (column == 0 || column == 2) {
@@ -73,6 +74,7 @@ public class Aircraft
             //    System.out.println("Deseja reservar o assento ao lado? (S/n)");
             // }
         }
+        return true;
     }
     public void print() {
         System.out.println("POA -> CGH");

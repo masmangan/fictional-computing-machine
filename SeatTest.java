@@ -44,6 +44,8 @@ public class SeatTest
     public void testSeatIsAvailable()
     {
         Seat s = new Seat();
+        assertEquals(true, s.getAvailable());
+        s.setAvailable(false);
         assertEquals(false, s.getAvailable());
         s.setAvailable(true);
         assertEquals(true, s.getAvailable());

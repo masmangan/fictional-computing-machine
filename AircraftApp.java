@@ -19,9 +19,11 @@ public class AircraftApp
             command = in.nextLine();
             if (command.startsWith("show"))
                 a.print();
-            else if (command.startsWith("sell"))                
+            else if (command.startsWith("sell"))  {              
                 a.sell(command);
-            else if (command.startsWith("write"))                
+                // print("Quer bloquear?")
+                // a.block(command);
+            } else if (command.startsWith("write"))                
                 a.write();
             else if (command.startsWith("read"))                
                 a.read();
