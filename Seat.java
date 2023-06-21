@@ -10,6 +10,7 @@ public class Seat
     private boolean available;
     
     public Seat() {
+        passenger = null;
         available = true;
     }
     
@@ -18,6 +19,7 @@ public class Seat
     }
 
     public void setAvailable(boolean available) {
+        this.passenger = null;
         this.available = available;
     }
     

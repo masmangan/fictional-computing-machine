@@ -64,12 +64,12 @@ public class Aircraft
             return false;
         } else {
             this.seats[line][column].setAvailable(false);        
-            int next;
-            if (column == 0 || column == 2) {
-                next = column + 1;
-            } else {
-                next = column - 1;
-            }
+            //int next;
+            //if (column == 0 || column == 2) {
+            //    next = column + 1;
+            //} else {
+            //    next = column - 1;
+            //}
             //if (!this.seats[line][next]) {
             //    System.out.println("Deseja reservar o assento ao lado? (S/n)");
             // }
